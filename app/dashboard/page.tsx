@@ -1,27 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { Header } from "@/components/ui/Header";
 import { ChevronRight, Flame, Lock, CheckCircle2, BrainCircuit, ArrowLeft } from "lucide-react";
 
 export default function Dashboard() {
   return (
     <main className="flex-1 flex flex-col bg-slate-50 min-h-screen pb-24">
+      <Header/>
       
-      {/* HEADER */}
-      <header className="px-6 py-6 bg-white flex items-center justify-between sticky top-0 z-10">
-        <div className="flex items-center gap-3">
-          {/* <Link href="/" className="p-2 -ml-2 rounded-full hover:bg-slate-100 text-slate-600">
-            <ArrowLeft className="w-5 h-5" />
-          </Link> */}
-          <span className="font-bold text-lg text-slate-900 tracking-tight">Qurioverse</span>
-        </div>
-        
-        <div className="flex items-center gap-3 bg-indigo-50 px-3 py-1.5 rounded-full">
-          <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">12 Day Streak</span>
-          {/* Avatar Placeholder */}
-          <div className="w-6 h-6 rounded-full bg-indigo-200 border-2 border-white" />
-        </div>
-      </header>
-
       <div className="px-6 pt-6 flex-1 overflow-y-auto space-y-6">
         
         {/* WELCOME TEXT */}
@@ -58,10 +44,11 @@ export default function Dashboard() {
             </div>
           </div>
 
+         <a href="/completion">
           <Button variant="primary" className="w-full">
             Resume Learning
             {/* <ChevronRight className="w-4 h-4 ml-1" /> */}
-          </Button>
+          </Button></a>
         </div>
 
         {/* STREAK CARD */}

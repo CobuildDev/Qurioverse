@@ -8,7 +8,7 @@ export function BottomNav() {
   const pathname = usePathname();
 
   // Add any future routes here where the nav SHOULD appear
-  const showOnRoutes = ["/dashboard", "/library", "/tutor", "/progress"];
+  const showOnRoutes = ["/dashboard", "/library", "/tutor", "/progress", "/completion"];
   
   // If we are on the splash screen ("/") or a quiz screen, hide the nav
   if (!showOnRoutes.includes(pathname)) {
@@ -23,7 +23,7 @@ export function BottomNav() {
   ];
 
   return (
-    <nav className="sticky bottom-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 pb-8 pt-8 px-16 flex items-center justify-between z-50">
+    <nav className="sticky bottom-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 pb-8 pt-3 px-6 flex items-center justify-between z-50">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         const Icon = item.icon;
