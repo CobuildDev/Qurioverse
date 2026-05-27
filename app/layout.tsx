@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { Smartphone } from "lucide-react";
+import { BottomNav } from "@/components/ui/BottomNav";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -44,7 +45,8 @@ export default function RootLayout({
         <div className="md:hidden flex min-h-screen w-full flex-col relative bg-white">
           {children}
         </div>
-
+{/* Global Bottom Navigation */}
+          <BottomNav />
       </body>
     </html>
   );
