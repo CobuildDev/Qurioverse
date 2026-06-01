@@ -16,14 +16,14 @@ export function BottomNav() {
   }
 
   const navItems = [
-    { name: "HOME", href: "/dashboard", icon: Home },
-    { name: "LIBRARY", href: "/library", icon: BookOpen },
-    { name: "AI TUTOR", href: "/tutor", icon: BrainCircuit },
-    { name: "PROGRESS", href: "/progress", icon: BarChart2 },
+    { name: "MAP", href: "/dashboard", icon: Home },
+    { name: "LAB", href: "/library", icon: BookOpen },
+    { name: "TUTOR", href: "/tutor", icon: BrainCircuit },
+    { name: "STATS", href: "/progress", icon: BarChart2 },
   ];
 
   return (
-    <nav className="sticky bottom-0 w-full bg-white/90 backdrop-blur-md border-t border-slate-100 pb-8 pt-3 px-6 flex items-center justify-between z-50">
+    <nav className="sticky bottom-0 w-full bg-white/95 backdrop-blur-md border-t-4 border-slate-100 pb-6 pt-3 px-4 flex items-center justify-around z-50 shadow-[0_-4px_16px_rgba(15,23,42,0.02)]">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         const Icon = item.icon;
@@ -32,14 +32,14 @@ export function BottomNav() {
           <Link
             key={item.name}
             href={item.href}
-            className={`flex flex-col items-center justify-center min-w-[72px] transition-all ${
+            className={`flex flex-col items-center justify-center min-w-[68px] py-1.5 px-2.5 rounded-2xl transition-all duration-100 active:scale-90 ${
               isActive 
-                ? "bg-indigo-50 text-indigo-600 rounded-2xl py-2 px-3" 
-                : "text-slate-500 hover:text-slate-800 py-2"
+                ? "bg-brand-soft-purple text-brand-purple border-2 border-b-4 border-brand-purple/20 font-bold" 
+                : "text-slate-400 hover:text-slate-600 font-medium"
             }`}
           >
-            <Icon className={`w-6 h-6 mb-1 ${isActive ? "stroke-[2.5px]" : "stroke-2"}`} />
-            <span className={`text-[10px] tracking-wide ${isActive ? "font-bold" : "font-medium"}`}>
+            <Icon className={`w-5.5 h-5.5 mb-0.5 ${isActive ? "stroke-[2.5px]" : "stroke-2"}`} />
+            <span className="text-[9px] tracking-wider uppercase font-outfit">
               {item.name}
             </span>
           </Link>
@@ -47,4 +47,4 @@ export function BottomNav() {
       })}
     </nav>
   );
-}
+}

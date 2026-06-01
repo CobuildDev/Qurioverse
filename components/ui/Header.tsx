@@ -1,26 +1,43 @@
 import Link from "next/link";
-import { Menu, Zap } from "lucide-react";
+import { Zap, Flame, Sparkles, User } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="px-6 py-4 bg-white flex items-center justify-between sticky top-0 z-10">
-      <button className="p-2 -ml-2 text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-full transition-all">
-        <Menu className="w-5 h-5" />
-      </button>
+    <header className="px-6 py-4 bg-slate-50 flex items-center justify-between sticky top-0 z-30 border-b-2 border-slate-100/80 backdrop-blur-md">
       
-      <Link href="/dashboard" className="font-bold text-lg text-slate-900 tracking-tight">
-        Qurioverse
+      {/* BRAND logo */}
+      <Link href="/dashboard" className="font-extrabold text-xl text-brand-slate tracking-tight flex items-center gap-1 font-outfit">
+        <span className="bg-brand-purple text-white px-2 py-0.5 rounded-xl text-sm border-2 border-b-4 border-brand-purple-dark">Q</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-teal">Qurioverse</span>
       </Link>
       
-      <div className="flex items-center gap-3">
-        <button className="text-indigo-500 hover:text-indigo-600 transition-colors">
-          <Zap className="w-4 h-4 fill-current" />
-        </button>
-        {/* Avatar Placeholder */}
-        <div className="w-7 h-7 rounded-full bg-indigo-200 border-2 border-white flex items-center justify-center overflow-hidden">
-            <span className="text-[10px] font-bold text-indigo-700">V</span>
+      {/* STATS HUDS */}
+      <div className="flex items-center gap-2 font-outfit">
+        
+        {/* Streak Pill */}
+        <div className="flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-b-4 border-slate-100 rounded-full text-orange-500 text-xs font-black shadow-sm">
+          <Flame className="w-4 h-4 fill-current animate-pulse-subtle" />
+          <span>12</span>
         </div>
+
+        {/* Energy Pill */}
+        <div className="flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-b-4 border-slate-100 rounded-full text-brand-yellow-dark text-xs font-black shadow-sm">
+          <Zap className="w-4 h-4 fill-current" />
+          <span>95</span>
+        </div>
+
+        {/* Sparkles / Crystals Pill */}
+        <div className="flex items-center gap-1 px-2.5 py-1 bg-white border-2 border-b-4 border-slate-100 rounded-full text-brand-teal text-xs font-black shadow-sm">
+          <Sparkles className="w-4 h-4 fill-current" />
+          <span>450</span>
+        </div>
+        
+        {/* Avatar Slot */}
+        <Link href="/progress" className="w-8 h-8 rounded-full bg-brand-soft-purple border-2 border-brand-purple flex items-center justify-center overflow-hidden transition-all active:scale-90 shadow-sm">
+          <User className="w-4 h-4 text-brand-purple" />
+        </Link>
+
       </div>
     </header>
   );
-}
+}
