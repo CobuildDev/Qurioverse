@@ -8,8 +8,12 @@ export default function EntryScreen() {
     <main className="flex-1 flex flex-col items-center justify-between px-6 py-12 relative overflow-hidden bg-gradient-to-b from-[#FDFEFE] to-[#F2F5FA] min-h-screen">
 
       {/* Background Decorative Quantum Rings */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-2 border-dashed border-cyan-100 rounded-full animate-orbit-cw pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 border border-purple-100 rounded-full animate-orbit-ccw pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none">
+        <div className="w-full h-full border-2 border-dashed border-cyan-100 rounded-full animate-orbit-cw" />
+      </div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 pointer-events-none">
+        <div className="w-full h-full border border-purple-100 rounded-full animate-orbit-ccw" />
+      </div>
 
       {/* TOP HEADER */}
       <div className="z-10 text-center pt-4">

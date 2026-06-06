@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Qurioverse | Quantum Physics Quest",
+  title: "Qurioverse",
   description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
 };
 
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fredoka.variable} ${outfit.variable} antialiased bg-slate-900 font-fredoka`}>
-        
+
         {/* DESKTOP FALLBACK */}
         <div className="hidden md:flex h-screen w-full flex-col items-center justify-center bg-slate-950 text-slate-200 p-6 text-center">
           <Smartphone className="mb-6 h-16 w-16 text-cyan-400 animate-bounce" />

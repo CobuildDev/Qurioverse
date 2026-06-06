@@ -39,15 +39,15 @@ export default function LibraryScreen() {
       <Header />
 
       <div className="px-5 pt-6 flex-1 overflow-y-auto space-y-6">
-        
+
         {/* HEADER TEXT */}
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-soft-teal border-2 border-cyan-200/50 rounded-full text-brand-teal text-xs font-black uppercase tracking-wider">
+          {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-soft-teal border-2 border-cyan-200/50 rounded-full text-brand-teal text-xs font-black uppercase tracking-wider">
             <FlaskConical className="w-3.5 h-3.5" />
             <span>SUBATOMIC PLAYGROUND</span>
-          </div>
+          </div> */}
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            CONCEPT LAB
+            Concept Lab
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Tap a card to trigger experiments and sandbox simulations!
@@ -59,8 +59,8 @@ export default function LibraryScreen() {
           {concepts.map((concept, index) => {
             const Icon = concept.icon;
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`card-3d bg-white p-5 border-2 border-b-6 border-slate-200 flex flex-col gap-4`}
               >
                 <div className="flex justify-between items-center">
@@ -74,7 +74,7 @@ export default function LibraryScreen() {
                     {concept.tag}
                   </span>
                 </div>
-                
+
                 <p className="text-xs text-slate-500 leading-relaxed font-medium">
                   {concept.desc}
                 </p>
