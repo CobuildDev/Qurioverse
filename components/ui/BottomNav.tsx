@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, BrainCircuit, BarChart2 } from "lucide-react";
+import { Home, BookOpen, BrainCircuit, BarChart2, Trophy } from "lucide-react";
 
 export function BottomNav() {
   const pathname = usePathname();
 
   // Add any future routes here where the nav SHOULD appear
-  const showOnRoutes = ["/dashboard", "/library", "/tutor", "/progress", "/completion"];
+  const showOnRoutes = ["/dashboard", "/library", "/tutor", "/progress", "/completion", "/leaderboard", "/puzzle"];
   
   // If we are on the splash screen ("/") or a quiz screen, hide the nav
   if (!showOnRoutes.includes(pathname)) {
@@ -20,6 +20,7 @@ export function BottomNav() {
     { name: "LAB", href: "/library", icon: BookOpen },
     { name: "TUTOR", href: "/tutor", icon: BrainCircuit },
     { name: "STATS", href: "/progress", icon: BarChart2 },
+    { name: "RANK", href: "/leaderboard", icon: Trophy },
   ];
 
   return (

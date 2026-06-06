@@ -2,6 +2,7 @@ import { Header } from "@/components/ui/Header";
 import { CurrentLessonCard } from "@/components/dashboard/CurrentLessonCard";
 import { DailyGoalCard } from "@/components/dashboard/DailyGoalCard";
 import { ConceptLabCard } from "@/components/dashboard/ConceptLabCard";
+import { DailyPuzzleCard } from "@/components/dashboard/DailyPuzzleCard";
 import { QuestPathway } from "@/components/dashboard/QuestPathway";
 import { AiTutorWidget } from "@/components/dashboard/AiTutorWidget";
 
@@ -20,6 +21,9 @@ export default function Dashboard() {
           <DailyGoalCard />
           <ConceptLabCard />
         </div>
+
+        {/* DAILY PUZZLE */}
+        <DailyPuzzleCard />
 
         {/* THE QUEST PATHWAY */}
         <QuestPathway />
