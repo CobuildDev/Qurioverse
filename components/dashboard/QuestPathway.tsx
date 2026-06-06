@@ -39,7 +39,7 @@ export function QuestPathway() {
           return (
             <div key={node.id} className={`${node.pos} flex flex-col items-center group relative`}>
               
-              {/* Floating Quarky mascot next to current active node */}
+              {/* Floating Quiro mascot next to current active node */}
               {/* Fixed placement: centered above the node to avoid breaking out of viewport */}
               {isActive && (
                 <div className="absolute -top-14 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
@@ -48,8 +48,8 @@ export function QuestPathway() {
                   </div>
                   <div className="w-11 h-11 relative animate-float">
                     <Image
-                      src="/images/quarky.png"
-                      alt="Quarky cheering"
+                      src="/images/quiro.png"
+                      alt="Quiro cheering"
                       fill
                       className="object-contain"
                     />
@@ -58,7 +58,7 @@ export function QuestPathway() {
               )}
 
               {/* Level bubble */}
-              <Link href={isLocked ? "#" : "/completion"} className="pointer-events-auto">
+              <Link href={isLocked ? "#" : "/lesson/3"} className="pointer-events-auto">
                 <button
                   disabled={isLocked}
                   className={`w-16 h-16 rounded-full flex items-center justify-center border-2 border-b-6 transition-all font-outfit text-lg font-black select-none ${

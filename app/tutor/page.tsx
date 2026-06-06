@@ -8,7 +8,7 @@ import { BrainCircuit, Send, Sparkles } from "lucide-react";
 
 interface Message {
   id: number;
-  sender: "user" | "quarky";
+  sender: "user" | "quiro";
   text: string;
   avatar?: string;
 }
@@ -17,7 +17,7 @@ export default function TutorScreen() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      sender: "quarky",
+      sender: "quiro",
       text: "Hey quantum explorer! Ask me anything, like 'What is a quantum?' or 'Why is Schrödinger's cat famous?'. I'll give you super funny analogies! 🚀",
     },
   ]);
@@ -34,7 +34,7 @@ export default function TutorScreen() {
     setMessages((prev) => [
       ...prev,
       { id: id, sender: "user", text: q },
-      { id: id + 1, sender: "quarky", text: r },
+      { id: id + 1, sender: "quiro", text: r },
     ]);
   };
 
@@ -51,7 +51,7 @@ export default function TutorScreen() {
             <span>AI TUTOR LAB</span>
           </div>
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            ASK QUARKY
+            ASK QUIRO
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Get quantum concepts explained with toys, cats, and pizza analogies!
@@ -61,23 +61,23 @@ export default function TutorScreen() {
         {/* CHAT MESSAGES DISPLAY */}
         <div className="flex-1 overflow-y-auto py-4 space-y-4 pr-1">
           {messages.map((msg) => {
-            const isQuarky = msg.sender === "quarky";
+            const isQuiro = msg.sender === "quiro";
             return (
               <div 
                 key={msg.id} 
-                className={`flex gap-3 max-w-[85%] ${isQuarky ? "self-start" : "self-end flex-row-reverse"}`}
+                className={`flex gap-3 max-w-[85%] ${isQuiro ? "self-start" : "self-end flex-row-reverse"}`}
               >
-                {isQuarky && (
+                {isQuiro && (
                   <div className="w-9 h-9 relative shrink-0 bg-brand-soft-purple rounded-xl border border-purple-100 flex items-center justify-center">
                     <div className="w-7 h-7 relative animate-float">
-                      <Image src="/images/quarky.png" fill alt="Quarky" className="object-contain" />
+                      <Image src="/images/quiro.png" fill alt="Quiro" className="object-contain" />
                     </div>
                   </div>
                 )}
                 
                 <div 
                   className={`p-3.5 rounded-2xl text-xs font-medium leading-relaxed border-2 ${
-                    isQuarky 
+                    isQuiro 
                       ? "bg-white border-slate-200 text-slate-700 shadow-sm" 
                       : "bg-brand-purple border-brand-purple-dark text-white shadow-sm"
                   }`}

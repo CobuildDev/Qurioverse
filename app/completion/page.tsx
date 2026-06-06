@@ -63,10 +63,10 @@ export default function CompletionScreen() {
         {/* MASCOT DIALOGUE */}
         <div className="flex items-center gap-4 bg-brand-soft-purple/40 border-2 border-purple-100/50 p-4 rounded-3xl">
           <div className="w-16 h-16 relative shrink-0">
-            <Image src="/images/quarky.png" fill alt="Quarky happy" className="object-contain animate-float" />
+            <Image src="/images/quiro.png" fill alt="Quiro happy" className="object-contain animate-float" />
           </div>
           <div>
-            <h4 className="font-black text-xs text-brand-purple">QUARKY SAYS:</h4>
+            <h4 className="font-black text-xs text-brand-purple">QUIRO SAYS:</h4>
             <p className="text-xs text-slate-600 font-medium mt-0.5 leading-relaxed">
               "Amazing job! Planck would be so proud. Energy is discrete, and your brain power is infinite!"
             </p>

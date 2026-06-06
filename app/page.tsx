@@ -34,7 +34,7 @@ export default function EntryScreen() {
       <div className="z-10 flex flex-col items-center my-6 relative w-full max-w-[300px]">
         {/* Animated Speech Bubble */}
         <div className="speech-bubble bg-white text-brand-slate font-bold text-xs p-4 rounded-2xl shadow-md border-2 border-slate-100 max-w-[220px] text-center mb-6 relative animate-float">
-          <span>"Hey there, explorer! I'm Quarky. Let's bend physics together!"</span>
+          <span>"Hey there, explorer! I'm Quiro. Let's bend physics together!"</span>
         </div>
 
         {/* Glow behind Mascot */}
@@ -43,8 +43,8 @@ export default function EntryScreen() {
         {/* Mascot Image */}
         <div className="w-48 h-48 relative animate-float">
           <Image
-            src="/images/quarky.png"
-            alt="Quarky the Quantum Spirit Mascot"
+            src="/images/quiro.png"
+            alt="Quiro the Quantum Spirit Mascot"
             fill
             className="object-contain"
             priority

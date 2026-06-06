@@ -34,7 +34,7 @@ export function CurrentLessonCard() {
         </div>
       </div>
 
-      <Link href="/completion">
+      <Link href="/lesson/3">
         <Button variant="primary" size="default" className="w-full h-12">
           Resume Quest
         </Button>

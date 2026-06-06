@@ -13,9 +13,9 @@ export default function ProgressScreen() {
   ];
 
   const costumes = [
-    { name: "Original Spirit", cost: "Unlocked", status: "Equipped", img: "/images/quarky.png" },
-    { name: "Quantum Scientist", cost: "500 Sparks", status: "Locked", img: "/images/quarky.png" },
-    { name: "Subatomic Space Suit", cost: "800 Sparks", status: "Locked", img: "/images/quarky.png" },
+    { name: "Original Spirit", cost: "Unlocked", status: "Equipped", img: "/images/quiro.png" },
+    { name: "Quantum Scientist", cost: "500 Sparks", status: "Locked", img: "/images/quiro.png" },
+    { name: "Subatomic Space Suit", cost: "800 Sparks", status: "Locked", img: "/images/quiro.png" },
   ];
 
   return (
@@ -90,9 +90,9 @@ export default function ProgressScreen() {
           </div>
         </div>
 
-        {/* QUARKY COSTUME SHOP */}
+        {/* QUIRO COSTUME SHOP */}
         <div className="pb-6">
-          <h3 className="font-black text-brand-slate text-sm mb-3 font-outfit">QUARKY'S WARDROBE</h3>
+          <h3 className="font-black text-brand-slate text-sm mb-3 font-outfit">QUIRO'S WARDROBE</h3>
           
           <div className="grid grid-cols-1 gap-4">
             {costumes.map((costume, idx) => {
@@ -106,7 +106,7 @@ export default function ProgressScreen() {
                     {/* Tiny Mascot Avatar Costume Preview */}
                     <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl relative overflow-hidden flex items-center justify-center">
                       <div className="w-8 h-8 relative animate-float">
-                        <Image src={costume.img} fill alt="Quarky Costume" className="object-contain" />
+                        <Image src={costume.img} fill alt="Quiro Costume" className="object-contain" />
                       </div>
                       {isLocked && (
                         <div className="absolute inset-0 bg-slate-900/5 backdrop-blur-xs flex items-center justify-center text-slate-500">
