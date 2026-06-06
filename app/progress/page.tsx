@@ -23,15 +23,11 @@ export default function ProgressScreen() {
       <Header />
 
       <div className="px-5 pt-6 flex-1 overflow-y-auto space-y-6">
-        
+
         {/* TOP INFO AREA */}
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-50 border-2 border-yellow-200/50 rounded-full text-brand-yellow-dark text-xs font-black uppercase tracking-wider">
-            <BarChart2 className="w-3.5 h-3.5" />
-            <span>MY ACHIEVEMENTS</span>
-          </div>
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            STATS & STICKERS
+            Stats & Stickers
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Review your subatomic growth, sticker collection, and unlock custom costumes!
@@ -59,16 +55,15 @@ export default function ProgressScreen() {
 
         {/* STICKER BOOK AREA */}
         <div>
-          <h3 className="font-black text-brand-slate text-sm mb-3 font-outfit">STICKER BOOK</h3>
+          <h3 className="font-black text-brand-slate text-sm mb-3 font-outfit">Sticker Book</h3>
           <div className="space-y-3">
             {stickers.map((sticker, idx) => {
               const Icon = sticker.icon;
               return (
-                <div 
-                  key={idx} 
-                  className={`card-3d bg-white p-3 border-2 border-b-4 border-slate-200 flex items-center gap-3.5 ${
-                    !sticker.unlocked ? "opacity-60" : ""
-                  }`}
+                <div
+                  key={idx}
+                  className={`card-3d bg-white p-3 border-2 border-b-4 border-slate-200 flex items-center gap-3.5 ${!sticker.unlocked ? "opacity-60" : ""
+                    }`}
                 >
                   <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center shrink-0 shadow-sm ${sticker.bg}`}>
                     <Icon className="w-5 h-5 stroke-[2.5px]" />
@@ -92,14 +87,14 @@ export default function ProgressScreen() {
 
         {/* QUIRO COSTUME SHOP */}
         <div className="pb-6">
-          <h3 className="font-black text-brand-slate text-sm mb-3 font-outfit">QUIRO'S WARDROBE</h3>
-          
+          <h3 className="font-black text-brand-slate text-sm mb-3 font-outfit">Quiro's Wardrobe</h3>
+
           <div className="grid grid-cols-1 gap-4">
             {costumes.map((costume, idx) => {
               const isLocked = costume.status === "Locked";
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="card-3d bg-white p-4 border-2 border-b-6 border-slate-200 flex items-center justify-between"
                 >
                   <div className="flex items-center gap-3.5">
@@ -119,9 +114,9 @@ export default function ProgressScreen() {
                       <p className="text-[10px] text-slate-400 font-medium">Cost: {costume.cost}</p>
                     </div>
                   </div>
-                  
-                  <Button 
-                    variant={isLocked ? "outline" : "primary"} 
+
+                  <Button
+                    variant={isLocked ? "outline" : "primary"}
                     className="h-9 px-3.5 text-[9px] tracking-wider font-black"
                     disabled={isLocked}
                   >

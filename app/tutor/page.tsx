@@ -18,14 +18,14 @@ export default function TutorScreen() {
     {
       id: 1,
       sender: "quiro",
-      text: "Hey quantum explorer! Ask me anything, like 'What is a quantum?' or 'Why is Schrödinger's cat famous?'. I'll give you super funny analogies! 🚀",
+      text: "Hey quantum explorer! Ask me anything, like 'What is a quantum?' or 'Why is Schrödinger's cat famous?'. I'll give you super funny analogies!",
     },
   ]);
 
   const presetQuestions = [
-    { text: "🐱 Is Schrödinger's cat okay?", reply: "Oh, absolutely! It's a hypothetical kitty. It's just a funny way of saying that things in the subatomic world can be in multiple states (alive AND sleeping) until someone opens the box and checks!" },
-    { text: "🧱 What does 'quantum' mean?", reply: "Imagine trying to buy water, but instead of a smooth flowing hose, you can ONLY buy it in tiny, individual balloons! That's quantum - energy comes in tiny, packets called 'quanta' instead of one smooth stream." },
-    { text: "🌀 What is spin?", reply: "Subatomic particles act like tiny spinning tops, but they spin in weird ways! A quantum spin can point up and down at the same time until we look. Mind-bending, right?" }
+    { text: "Is Schrödinger's cat okay?", reply: "Oh, absolutely! It's a hypothetical kitty. It's just a funny way of saying that things in the subatomic world can be in multiple states (alive AND sleeping) until someone opens the box and checks!" },
+    { text: "What does 'quantum' mean?", reply: "Imagine trying to buy water, but instead of a smooth flowing hose, you can ONLY buy it in tiny, individual balloons! That's quantum - energy comes in tiny, packets called 'quanta' instead of one smooth stream." },
+    { text: "What is spin?", reply: "Subatomic particles act like tiny spinning tops, but they spin in weird ways! A quantum spin can point up and down at the same time until we look. Mind-bending, right?" }
   ];
 
   const handleTapQuestion = (q: string, r: string) => {
@@ -43,15 +43,11 @@ export default function TutorScreen() {
       <Header />
 
       <div className="px-5 pt-6 flex-1 flex flex-col justify-between overflow-hidden">
-        
+
         {/* TOP INFO AREA */}
         <div className="space-y-1 pb-4 border-b border-slate-100">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-soft-purple border-2 border-purple-200/50 rounded-full text-brand-purple text-xs font-black uppercase tracking-wider">
-            <BrainCircuit className="w-3.5 h-3.5" />
-            <span>AI TUTOR LAB</span>
-          </div>
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            ASK QUIRO
+            Ask Quiro
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Get quantum concepts explained with toys, cats, and pizza analogies!
@@ -63,8 +59,8 @@ export default function TutorScreen() {
           {messages.map((msg) => {
             const isQuiro = msg.sender === "quiro";
             return (
-              <div 
-                key={msg.id} 
+              <div
+                key={msg.id}
                 className={`flex gap-3 max-w-[85%] ${isQuiro ? "self-start" : "self-end flex-row-reverse"}`}
               >
                 {isQuiro && (
@@ -74,13 +70,12 @@ export default function TutorScreen() {
                     </div>
                   </div>
                 )}
-                
-                <div 
-                  className={`p-3.5 rounded-2xl text-xs font-medium leading-relaxed border-2 ${
-                    isQuiro 
-                      ? "bg-white border-slate-200 text-slate-700 shadow-sm" 
-                      : "bg-brand-purple border-brand-purple-dark text-white shadow-sm"
-                  }`}
+
+                <div
+                  className={`p-3.5 rounded-2xl text-xs font-medium leading-relaxed border-2 ${isQuiro
+                    ? "bg-white border-slate-200 text-slate-700 shadow-sm"
+                    : "bg-brand-purple border-brand-purple-dark text-white shadow-sm"
+                    }`}
                 >
                   {msg.text}
                 </div>

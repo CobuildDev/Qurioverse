@@ -4,12 +4,12 @@ import { Check, Lock, Play } from "lucide-react";
 
 export function QuestPathway() {
   const pathNodes = [
-    { id: 1, title: "Quantum Intro", subtitle: "Unit 0: What is Quantum?", status: "completed", pos: "col-start-1 justify-self-center" },
-    { id: 2, title: "The Blackbody Problem", subtitle: "Unit 1: The Crisis of Classical Physics", status: "completed", pos: "col-start-2 justify-self-center" },
-    { id: 3, title: "Planck's Constant", subtitle: "Unit 1: The Birth of the Constant", status: "active", pos: "col-start-3 justify-self-center" },
-    { id: 4, title: "The Photoelectric Effect", subtitle: "Unit 2: Einstein's Particles", status: "locked", pos: "col-start-2 justify-self-center" },
-    { id: 5, title: "Wave-Particle Duality", subtitle: "Unit 2: Matter Waves", status: "locked", pos: "col-start-1 justify-self-center" },
-    { id: 6, title: "Quantum Tunneling", subtitle: "Unit 3: Passing Through Walls", status: "locked", pos: "col-start-2 justify-self-center" },
+    { id: 1, title: "Quantum Intro", subtitle: "Unit 0: What is Quantum?", status: "completed", pos: "col-start-1 row-start-1 justify-self-center" },
+    { id: 2, title: "The Blackbody Problem", subtitle: "Unit 1: The Crisis of Classical Physics", status: "completed", pos: "col-start-2 row-start-2 justify-self-center" },
+    { id: 3, title: "Planck's Constant", subtitle: "Unit 1: The Birth of the Constant", status: "active", pos: "col-start-3 row-start-3 justify-self-center" },
+    { id: 4, title: "The Photoelectric Effect", subtitle: "Unit 2: Einstein's Particles", status: "locked", pos: "col-start-2 row-start-4 justify-self-center" },
+    { id: 5, title: "Wave-Particle Duality", subtitle: "Unit 2: Matter Waves", status: "locked", pos: "col-start-1 row-start-5 justify-self-center" },
+    { id: 6, title: "Quantum Tunneling", subtitle: "Unit 3: Passing Through Walls", status: "locked", pos: "col-start-2 row-start-6 justify-self-center" },
   ];
 
   return (
@@ -17,14 +17,15 @@ export function QuestPathway() {
       
       {/* Vertical Connecting SVG Line */}
       <div className="absolute top-12 bottom-12 left-0 right-0 pointer-events-none flex justify-center z-0">
-        <svg className="w-full h-full" style={{ minHeight: "450px" }}>
+        <svg className="w-full h-full" viewBox="0 0 240 680" preserveAspectRatio="none">
           <path 
-            d="M 60 40 Q 180 100 180 160 T 60 280 T 180 400 T 60 520" 
+            d="M 40 40 Q 120 100 120 160 T 200 280 T 120 400 T 40 520 T 120 640" 
             fill="none" 
             stroke="#E2E8F0" 
             strokeWidth="6" 
             strokeLinecap="round"
             strokeDasharray="12 12"
+            vectorEffect="non-scaling-stroke"
           />
         </svg>
       </div>

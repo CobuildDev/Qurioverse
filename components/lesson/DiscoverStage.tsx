@@ -30,7 +30,7 @@ export function DiscoverStage({ onNext }: DiscoverStageProps) {
         </div>
 
         {/* Simulation Area */}
-        <div className="card-3d bg-slate-900 border-slate-800 p-6 h-64 relative overflow-hidden flex items-end justify-center">
+        <div className="card-3d bg-slate-900 border-slate-800 p-6 h-64 md:h-[450px] lg:h-[550px] relative overflow-hidden flex items-end justify-center">
           
           {/* Light Beam (Color changes with frequency) */}
           <div 

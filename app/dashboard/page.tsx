@@ -16,14 +16,14 @@ export default function Dashboard() {
         {/* CURRENT LESSON CARD */}
         <CurrentLessonCard />
 
-        {/* DOUBLE WIDGET GRID */}
-        <div className="grid grid-cols-2 gap-4">
+        {/* RESPONSIVE WIDGET GRID */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           <DailyGoalCard />
           <ConceptLabCard />
+          <div className="col-span-2 lg:col-span-1">
+            <DailyPuzzleCard />
+          </div>
         </div>
-
-        {/* DAILY PUZZLE */}
-        <DailyPuzzleCard />
 
         {/* THE QUEST PATHWAY */}
         <QuestPathway />

@@ -22,15 +22,15 @@ export default function LeaderboardScreen() {
       <Header />
 
       <div className="px-5 pt-6 flex-1 flex flex-col">
-        
+
         {/* HEADER */}
         <div className="text-center space-y-2 mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-50 border-2 border-yellow-200/50 rounded-full text-brand-yellow-dark text-xs font-black uppercase tracking-wider">
+          {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-50 border-2 border-yellow-200/50 rounded-full text-brand-yellow-dark text-xs font-black uppercase tracking-wider">
             <Trophy className="w-3.5 h-3.5" />
             <span>GLOBAL RANKINGS</span>
-          </div>
+          </div> */}
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            LEADERBOARD
+            Leaderboard
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Compete with quantum explorers worldwide!
@@ -39,17 +39,17 @@ export default function LeaderboardScreen() {
 
         {/* TABS */}
         <div className="flex bg-slate-200/60 p-1 rounded-2xl mb-6 border border-slate-200/80">
-          <button 
+          <button
             onClick={() => setTab("global")}
             className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-black uppercase transition-all ${tab === "global" ? "bg-white text-brand-purple shadow-sm border border-slate-100" : "text-slate-400"}`}
           >
-            <Globe className="w-4 h-4" /> Global
+            Global
           </button>
-          <button 
+          <button
             onClick={() => setTab("friends")}
             className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-black uppercase transition-all ${tab === "friends" ? "bg-white text-brand-purple shadow-sm border border-slate-100" : "text-slate-400"}`}
           >
-            <Users className="w-4 h-4" /> Friends
+            Friends
           </button>
         </div>
 
@@ -57,16 +57,15 @@ export default function LeaderboardScreen() {
         <div className="flex-1 bg-white rounded-3xl border-2 border-slate-200 p-2 shadow-sm overflow-hidden flex flex-col">
           <div className="flex-1 overflow-y-auto space-y-1">
             {players.slice(0, 5).map((player) => (
-              <div 
-                key={player.rank} 
+              <div
+                key={player.rank}
                 className="flex items-center p-3 rounded-2xl transition-all hover:bg-slate-50"
               >
                 {/* Rank Badge */}
-                <div className={`w-8 font-outfit font-black text-lg text-center ${
-                  player.rank === 1 ? "text-yellow-500" :
+                <div className={`w-8 font-outfit font-black text-lg text-center ${player.rank === 1 ? "text-yellow-500" :
                   player.rank === 2 ? "text-slate-400" :
-                  player.rank === 3 ? "text-orange-700" : "text-slate-300"
-                }`}>
+                    player.rank === 3 ? "text-orange-700" : "text-slate-300"
+                  }`}>
                   {player.rank}
                 </div>
 

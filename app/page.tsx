@@ -6,25 +6,9 @@ import { Button } from "@/components/ui/Button";
 export default function EntryScreen() {
   return (
     <main className="flex-1 flex flex-col items-center justify-between px-6 py-12 relative overflow-hidden bg-gradient-to-b from-[#FDFEFE] to-[#F2F5FA] min-h-screen">
-
-      {/* Background Decorative Quantum Rings */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none">
-        <div className="w-full h-full border-2 border-dashed border-cyan-100 rounded-full animate-orbit-cw" />
-      </div>
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 pointer-events-none">
-        <div className="w-full h-full border border-purple-100 rounded-full animate-orbit-ccw" />
-      </div>
-
       {/* TOP HEADER */}
-      <div className="z-10 text-center pt-4">
-        {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-soft-purple border-2 border-purple-200/50 rounded-full text-brand-purple text-xs font-black tracking-wider uppercase mb-3">
-          <Sparkles className="w-3.5 h-3.5 fill-current" />
-          <span>Ages 5-17</span>
-        </div> */}
-        <h1 className="text-5xl font-black tracking-tight font-outfit text-brand-slate uppercase">
-          <span className="text-brand-purple">Qurio</span>
-          <span className="text-brand-teal">verse</span>
-        </h1>
+      <div className="z-10 text-center flex items-center flex-col pt-4">
+        <Image src="/images/logo-text.png" width={200} height={40} alt="logo" />
         <p className="text-slate-500 font-medium text-sm mt-1 max-w-[280px] mx-auto leading-relaxed">
           Embark on a subatomic playground quest!
         </p>

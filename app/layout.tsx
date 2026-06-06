@@ -38,20 +38,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fredoka.variable} ${outfit.variable} antialiased bg-slate-900 font-fredoka`}>
 
-        {/* DESKTOP FALLBACK */}
-        <div className="hidden md:flex h-screen w-full flex-col items-center justify-center bg-slate-950 text-slate-200 p-6 text-center">
-          <Smartphone className="mb-6 h-16 w-16 text-cyan-400 animate-bounce" />
-          <h1 className="text-3xl font-extrabold mb-3 tracking-tight font-outfit text-white">Mobile Only Experience</h1>
-          <p className="text-slate-400 max-w-md leading-relaxed text-sm">
-            Qurioverse is designed exclusively for mobile viewport. Please open this link on your mobile device or use your browser's developer tools to simulate a mobile screen (e.g. iPhone 12 Pro).
-          </p>
-        </div>
-
-        {/* MOBILE APP CONTAINER */}
-        <div className="md:hidden flex min-h-screen w-full flex-col relative bg-slate-50">
-          {children}
-          {/* Global Bottom Navigation placed inside mobile-only view for proper native layout */}
+        <div className="flex min-h-screen w-full flex-col md:flex-row relative bg-slate-50">
+          {/* Desktop Sidebar / Mobile Bottom Nav */}
           <BottomNav />
+          
+          {/* Main Content Area */}
+          <div className="flex-1 flex flex-col md:ml-[240px] w-full min-h-screen">
+            {children}
+          </div>
         </div>
 
       </body>

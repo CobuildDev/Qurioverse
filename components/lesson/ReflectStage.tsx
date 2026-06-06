@@ -26,7 +26,7 @@ export function ReflectStage({ onNext }: ReflectStageProps) {
   return (
     <div className="flex-1 flex flex-col justify-between">
       <div className="space-y-6">
-        
+
         <div className="text-center">
           <h2 className="text-xl font-black text-brand-slate uppercase tracking-wide font-outfit">
             Reflect
@@ -40,8 +40,8 @@ export function ReflectStage({ onNext }: ReflectStageProps) {
           <h3 className="font-bold text-slate-700">
             In your own words, what did you just discover about light and electrons?
           </h3>
-          
-          <textarea 
+
+          <textarea
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             disabled={submitted}
@@ -65,11 +65,11 @@ export function ReflectStage({ onNext }: ReflectStageProps) {
                 <Image src="/images/quiro.png" fill alt="Quiro" className="object-contain" />
               </div>
             </div>
-            
+
             <div className="flex-1 bg-brand-purple text-white p-4 rounded-3xl rounded-bl-sm shadow-md border-2 border-brand-purple-dark relative">
               <span className="text-xs font-black uppercase text-purple-200 block mb-1">Quiro (AI Tutor)</span>
               <p className="text-sm font-medium leading-relaxed">
-                That's exactly it! You noticed that changing the <span className="font-bold text-brand-yellow">brightness</span> didn't knock off electrons if the color (frequency) was too low. The light acts like discrete packets (photons). A million weak packets won't do what one strong packet can! 🚀
+                That's exactly it! You noticed that changing the <span className="font-bold text-brand-yellow">brightness</span> didn't knock off electrons if the color (frequency) was too low. The light acts like discrete packets (photons). A million weak packets won't do what one strong packet can!
               </p>
             </div>
           </div>

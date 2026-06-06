@@ -7,7 +7,7 @@ export function Header() {
     <header className="px-6 py-4 bg-slate-50 flex items-center justify-between sticky top-0 z-30 border-b-2 border-slate-100/80 backdrop-blur-md">
 
       {/* BRAND logo */}
-      <Link href="/dashboard" className="">
+      <Link href="/dashboard" className="flex items-center">
         <Image src="/images/logo-text.png" width={110} height={40} alt="logo" />
       </Link>
 
