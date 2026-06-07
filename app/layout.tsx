@@ -17,8 +17,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://qurioverse.vercel.app"),
   title: "Qurioverse",
   description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
+  openGraph: {
+    title: "Qurioverse",
+    description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
+    type: "website",
+  },
 };
 
 // Prevents zooming on mobile inputs to keep it feeling like a native app
