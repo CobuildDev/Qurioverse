@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Qurioverse",
+    description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
+  },
 };
 
 // Prevents zooming on mobile inputs to keep it feeling like a native app
