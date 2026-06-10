@@ -8,7 +8,7 @@ export function BottomNav() {
   const pathname = usePathname();
 
   // Add any future routes here where the nav SHOULD appear
-  const showOnRoutes = ["/dashboard", "/library", "/tutor", "/progress", "/completion", "/leaderboard", "/puzzle"];
+  const showOnRoutes = ["/map", "/library", "/tutor", "/progress", "/completion", "/leaderboard", "/puzzle"];
 
   // If we are on the splash screen ("/") or a quiz screen, hide the nav
   if (!showOnRoutes.includes(pathname)) {
@@ -16,7 +16,7 @@ export function BottomNav() {
   }
 
   const navItems = [
-    { name: "MAP", href: "/dashboard", icon: Home },
+    { name: "MAP", href: "/map", icon: Home },
     { name: "LAB", href: "/library", icon: BookOpen },
     { name: "TUTOR", href: "/tutor", icon: BrainCircuit },
     { name: "STATS", href: "/progress", icon: BarChart2 },
@@ -24,7 +24,7 @@ export function BottomNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 md:top-0 md:left-0 w-full md:w-[240px] md:h-screen bg-white/95 backdrop-blur-md border-t-4 md:border-t-0 md:border-r-4 border-slate-100 pb-6 pt-3 md:pt-8 md:pb-8 px-4 flex md:flex-col items-center md:items-start justify-around md:justify-start md:gap-4 z-50 shadow-[0_-4px_16px_rgba(15,23,42,0.02)] md:shadow-[4px_0_16px_rgba(15,23,42,0.02)] transition-all">
+    <nav className="fixed bottom-0 md:top-6 md:left-6 w-full md:w-[240px] md:h-[calc(100vh-48px)] bg-white/95 backdrop-blur-md border-t-4 md:border-t-0 md:border-4 border-slate-100 md:rounded-3xl pb-6 pt-3 md:pt-8 md:pb-8 px-4 flex md:flex-col items-center md:items-start justify-around md:justify-start md:gap-4 z-50 shadow-[0_-4px_16px_rgba(15,23,42,0.02)] md:shadow-2xl transition-all">
       {/* Desktop Logo Spacer */}
       <div className="hidden md:block w-full px-4 mb-6">
         {/* <h2 className="font-outfit font-black text-2xl text-brand-slate uppercase tracking-tighter">

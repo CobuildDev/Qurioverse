@@ -9,11 +9,11 @@ export default function LeaderboardScreen() {
   const [tab, setTab] = useState<"global" | "friends">("global");
 
   const players = [
-    { rank: 1, name: "MarieC", score: 4200, avatar: "/images/quiro.png", isMe: false },
-    { rank: 2, name: "SchrodingerFan", score: 3850, avatar: "/images/quiro.png", isMe: false },
-    { rank: 3, name: "QuantumJumper", score: 3600, avatar: "/images/quiro.png", isMe: false },
-    { rank: 4, name: "PlanckConstant", score: 3450, avatar: "/images/quiro.png", isMe: false },
-    { rank: 5, name: "ElectronWave", score: 3200, avatar: "/images/quiro.png", isMe: false },
+    { rank: 1, name: "Donatus", score: 4200, avatar: "/images/quiro.png", isMe: false },
+    { rank: 2, name: "Benedict", score: 3850, avatar: "/images/quiro.png", isMe: false },
+    { rank: 3, name: "Praise", score: 3600, avatar: "/images/quiro.png", isMe: false },
+    { rank: 4, name: "Maryjane", score: 3450, avatar: "/images/quiro.png", isMe: false },
+    { rank: 5, name: "Victor", score: 3200, avatar: "/images/quiro.png", isMe: false },
     { rank: 142, name: "You", score: 1840, avatar: "/images/quiro.png", isMe: true },
   ];
 

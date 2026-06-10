@@ -6,10 +6,10 @@ export function CurrentLessonCard() {
   return (
     <div className="card-3d bg-white p-5 border-2 border-b-6 border-slate-200">
       <div className="flex justify-between items-start">
-        <span className="inline-block px-3 py-1 bg-brand-soft-purple text-brand-purple text-[10px] font-black uppercase tracking-widest rounded-full">
-          CURRENT UNIT
+        <span className="inline-block text-brand-purple text-[10px] font-black">
+          Current Unit
         </span>
-        <div className="flex items-center gap-1 text-orange-500 font-bold text-xs bg-orange-50 px-2 py-0.5 rounded-full border border-orange-100">
+        <div className="flex items-center gap-1 text-orange-500 font-bold text-xs">
           <Flame className="w-3.5 h-3.5 fill-current" />
           <span>Unit 1</span>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fredoka, Outfit } from "next/font/google";
 import { Smartphone } from "lucide-react";
 import { BottomNav } from "@/components/ui/BottomNav";
+import { MainLayoutWrapper } from "@/components/ui/MainLayoutWrapper";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -54,9 +55,9 @@ export default function RootLayout({
           <BottomNav />
           
           {/* Main Content Area */}
-          <div className="flex-1 flex flex-col md:ml-[240px] w-full min-h-screen">
+          <MainLayoutWrapper>
             {children}
-          </div>
+          </MainLayoutWrapper>
         </div>
 
       </body>
