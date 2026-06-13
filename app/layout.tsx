@@ -19,17 +19,17 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://qurioverse.vercel.app"),
-  title: "Qurioverse",
-  description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
+  title: "Quiroverse",
+  description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
   openGraph: {
-    title: "Qurioverse",
-    description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
+    title: "Quiroverse",
+    description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Qurioverse",
-    description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 5-17.",
+    description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
   },
 };
 
@@ -53,7 +53,7 @@ export default function RootLayout({
         <div className="flex min-h-screen w-full flex-col md:flex-row relative bg-slate-50">
           {/* Desktop Sidebar / Mobile Bottom Nav */}
           <BottomNav />
-          
+
           {/* Main Content Area */}
           <MainLayoutWrapper>
             {children}

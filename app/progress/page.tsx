@@ -27,7 +27,7 @@ export default function ProgressScreen() {
         {/* TOP INFO AREA */}
         <div className="space-y-1">
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            Stats & Stickers
+            Stats and Stickers
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Review your subatomic growth, sticker collection, and unlock custom costumes!

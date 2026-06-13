@@ -70,7 +70,7 @@ export default function CompletionScreen() {
 
         {/* ACTION BUTTONS */}
         <div className="flex flex-col gap-3">
-          <Link href="/dashboard" className="w-full">
+          <Link href="/map" className="w-full">
             <Button variant="accent" size="lg" className="w-full h-14 flex items-center justify-center gap-2">
               <span>Next Mission</span>
               <ArrowRight className="w-4 h-4 stroke-[3px]" />

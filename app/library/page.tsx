@@ -47,7 +47,7 @@ export default function LibraryScreen() {
             <span>SUBATOMIC PLAYGROUND</span>
           </div> */}
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            Concept Lab
+            Discovery Lab
           </h1>
           <p className="text-xs text-slate-400 font-medium">
             Tap a card to trigger experiments and sandbox simulations!

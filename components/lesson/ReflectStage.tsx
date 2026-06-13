@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight, Send } from "lucide-react";
 
 interface ReflectStageProps {
+  data: any;
   onNext: () => void;
 }
 
-export function ReflectStage({ onNext }: ReflectStageProps) {
+export function ReflectStage({ data, onNext }: ReflectStageProps) {
   const [answer, setAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [showTutor, setShowTutor] = useState(false);
@@ -37,15 +38,15 @@ export function ReflectStage({ onNext }: ReflectStageProps) {
         </div>
 
         <div className="bg-white p-5 rounded-3xl border-2 border-slate-200 border-b-4 space-y-4">
-          <h3 className="font-bold text-slate-700">
-            In your own words, what did you just discover about light and electrons?
+          <h3 className="font-bold text-slate-700 whitespace-pre-line">
+            {data.reflection.question}
           </h3>
 
           <textarea
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             disabled={submitted}
-            placeholder="I noticed that when the light was red..."
+            placeholder="I noticed that..."
             className="w-full h-32 p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl resize-none focus:outline-none focus:border-brand-purple focus:ring-4 focus:ring-brand-soft-purple transition-all text-slate-700 disabled:opacity-50"
           />
 
@@ -68,8 +69,8 @@ export function ReflectStage({ onNext }: ReflectStageProps) {
 
             <div className="flex-1 bg-brand-purple text-white p-4 rounded-3xl rounded-bl-sm shadow-md border-2 border-brand-purple-dark relative">
               <span className="text-xs font-black uppercase text-purple-200 block mb-1">Quiro (AI Tutor)</span>
-              <p className="text-sm font-medium leading-relaxed">
-                That's exactly it! You noticed that changing the <span className="font-bold text-brand-yellow">brightness</span> didn't knock off electrons if the color (frequency) was too low. The light acts like discrete packets (photons). A million weak packets won't do what one strong packet can!
+              <p className="text-sm font-medium leading-relaxed whitespace-pre-line">
+                {data.reflection.correctInsight}
               </p>
             </div>
           </div>
@@ -80,7 +81,7 @@ export function ReflectStage({ onNext }: ReflectStageProps) {
       {showTutor && (
         <div className="pt-6 mt-auto">
           <Button onClick={onNext} variant="primary" size="lg" className="w-full h-14 flex items-center justify-center gap-2">
-            <span>Complete Lesson</span>
+            <span>Next: Summary</span>
             <ArrowRight className="w-5 h-5 stroke-[3px]" />
           </Button>
         </div>

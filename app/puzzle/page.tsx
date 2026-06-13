@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Header } from "@/components/ui/Header";
 import { Button } from "@/components/ui/Button";
-import { Hexagon, CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function DailyPuzzleScreen() {
   const router = useRouter();
@@ -43,25 +43,24 @@ export default function DailyPuzzleScreen() {
       <Header />
 
       <div className="px-5 pt-6 flex-1 flex flex-col">
-        
+
         {/* HEADER */}
         <div className="text-center space-y-2 mb-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-soft-purple border-2 border-purple-200/50 rounded-full text-brand-purple text-xs font-black uppercase tracking-wider">
+          {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-soft-purple border-2 border-purple-200/50 rounded-full text-brand-purple text-xs font-black uppercase tracking-wider">
             <Hexagon className="w-3.5 h-3.5" />
             <span>DAILY PUZZLE</span>
-          </div>
+          </div> */}
           <h1 className="text-3xl font-black text-brand-slate tracking-tight font-outfit">
-            BRAIN TEASER
+            Brain Teaser
           </h1>
           <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400 font-medium font-mono bg-slate-200/50 py-1 px-3 rounded-full w-fit mx-auto">
-            <Clock className="w-3 h-3" />
             <span>Next puzzle in {timeLeft}</span>
           </div>
         </div>
 
         {/* PUZZLE CARD */}
         <div className="flex-1 card-3d bg-white p-6 border-2 border-b-6 border-slate-200 flex flex-col">
-          
+
           <h3 className="text-lg font-black text-slate-700 leading-snug mb-8">
             {puzzleData.question}
           </h3>
@@ -70,7 +69,7 @@ export default function DailyPuzzleScreen() {
             {puzzleData.options.map((option) => {
               const isSelected = selectedAnswer === option.id;
               const isCorrect = option.id === puzzleData.correctId;
-              
+
               let btnClass = "border-slate-200 text-slate-600 hover:bg-slate-50";
               if (isSelected && !isSubmitted) {
                 btnClass = "border-brand-purple bg-brand-soft-purple text-brand-purple font-bold";
@@ -102,10 +101,10 @@ export default function DailyPuzzleScreen() {
 
           <div className="pt-6 mt-auto">
             {!isSubmitted ? (
-              <Button 
-                onClick={handleSubmit} 
-                variant={selectedAnswer !== null ? "primary" : "outline"} 
-                size="lg" 
+              <Button
+                onClick={handleSubmit}
+                variant={selectedAnswer !== null ? "primary" : "outline"}
+                size="lg"
                 className="w-full h-14"
                 disabled={selectedAnswer === null}
               >
@@ -118,15 +117,15 @@ export default function DailyPuzzleScreen() {
                     {selectedAnswer === puzzleData.correctId ? "+20 Sparks!" : "Keep Trying Next Time!"}
                   </h4>
                   <p className="text-[10px] font-medium mt-0.5">
-                    {selectedAnswer === puzzleData.correctId 
-                      ? "Energy of Photon (2.5) - Work Function (2.0) = Kinetic Energy (0.5)" 
+                    {selectedAnswer === puzzleData.correctId
+                      ? "Energy of Photon (2.5) - Work Function (2.0) = Kinetic Energy (0.5)"
                       : "Remember: Kinetic Energy = Photon Energy - Work Function"}
                   </p>
                 </div>
-                <Button 
-                  onClick={() => router.push("/dashboard")} 
-                  variant="primary" 
-                  size="lg" 
+                <Button
+                  onClick={() => router.push("/map")}
+                  variant="primary"
+                  size="lg"
                   className="w-full h-14"
                 >
                   Back to Dashboard
@@ -134,7 +133,7 @@ export default function DailyPuzzleScreen() {
               </div>
             )}
           </div>
-          
+
         </div>
 
       </div>

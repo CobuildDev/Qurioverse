@@ -1,25 +1,49 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Check, Lock, Play } from "lucide-react";
+import curriculum from "@/data/curriculum.json";
+import { useUserStore } from "@/lib/store";
 
 export function QuestPathway() {
-  const pathNodes = [
-    { id: 1, title: "Quantum Intro", subtitle: "Unit 0: What is Quantum?", status: "completed", pos: "col-start-1 row-start-1 justify-self-center" },
-    { id: 2, title: "The Blackbody Problem", subtitle: "Unit 1: The Crisis of Classical Physics", status: "completed", pos: "col-start-2 row-start-2 justify-self-center" },
-    { id: 3, title: "Planck's Constant", subtitle: "Unit 1: The Birth of the Constant", status: "active", pos: "col-start-3 row-start-3 justify-self-center" },
-    { id: 4, title: "The Photoelectric Effect", subtitle: "Unit 2: Einstein's Particles", status: "locked", pos: "col-start-2 row-start-4 justify-self-center" },
-    { id: 5, title: "Wave-Particle Duality", subtitle: "Unit 2: Matter Waves", status: "locked", pos: "col-start-1 row-start-5 justify-self-center" },
-    { id: 6, title: "Quantum Tunneling", subtitle: "Unit 3: Passing Through Walls", status: "locked", pos: "col-start-2 row-start-6 justify-self-center" },
-  ];
+  const { unlockedLessons, completedLessons } = useUserStore();
+
+  // We'll flatten the lessons and slice to show just the current unit or first 15 for the MVP path
+  const pathNodes = curriculum.flatMap((unit) => 
+    unit.lessons.map((lesson, index) => {
+      let status = "locked";
+      if (completedLessons.includes(lesson.globalId)) {
+        status = "completed";
+      } else if (unlockedLessons.includes(lesson.globalId)) {
+        status = "active";
+      }
+
+      return {
+        ...lesson,
+        status,
+        unitTitle: unit.title
+      };
+    })
+  ).slice(0, 15); // showing first 15 nodes for MVP performance
+
+  const getColClass = (index: number) => {
+    const cycle = index % 4;
+    if (cycle === 0) return "col-start-1";
+    if (cycle === 1) return "col-start-2";
+    if (cycle === 2) return "col-start-3";
+    if (cycle === 3) return "col-start-2";
+    return "col-start-1";
+  };
 
   return (
-    <div className="py-8 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200/60 relative">
+    <div className="py-8 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200/60 relative overflow-hidden">
       
       {/* Vertical Connecting SVG Line */}
       <div className="absolute top-12 bottom-12 left-0 right-0 pointer-events-none flex justify-center z-0">
-        <svg className="w-full h-full" viewBox="0 0 240 680" preserveAspectRatio="none">
+        <svg className="w-full h-full" viewBox="0 0 240 1800" preserveAspectRatio="none">
           <path 
-            d="M 40 40 Q 120 100 120 160 T 200 280 T 120 400 T 40 520 T 120 640" 
+            d="M 40 40 Q 120 100 120 160 T 200 280 T 120 400 T 40 520 T 120 640 T 200 760 T 120 880 T 40 1000 T 120 1120 T 200 1240 T 120 1360 T 40 1480 T 120 1600" 
             fill="none" 
             stroke="#E2E8F0" 
             strokeWidth="6" 
@@ -32,16 +56,15 @@ export function QuestPathway() {
 
       {/* zig-zag bubbles */}
       <div className="grid grid-cols-3 gap-y-12 relative z-10 px-6">
-        {pathNodes.map((node) => {
+        {pathNodes.map((node, index) => {
           const isCompleted = node.status === "completed";
           const isActive = node.status === "active";
           const isLocked = node.status === "locked";
+          const colClass = getColClass(index);
 
           return (
-            <div key={node.id} className={`${node.pos} flex flex-col items-center group relative`}>
+            <div key={node.globalId} className={`${colClass} flex flex-col items-center group relative justify-self-center`}>
               
-              {/* Floating Quiro mascot next to current active node */}
-              {/* Fixed placement: centered above the node to avoid breaking out of viewport */}
               {isActive && (
                 <div className="absolute -top-14 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
                   <div className="bg-brand-purple text-white text-[9px] font-black py-1 px-2.5 rounded-full shadow-md border border-brand-purple-dark whitespace-nowrap mb-1 animate-float">
@@ -59,7 +82,7 @@ export function QuestPathway() {
               )}
 
               {/* Level bubble */}
-              <Link href={isLocked ? "#" : "/lesson/3"} className="pointer-events-auto">
+              <Link href={isLocked ? "#" : `/lesson/${node.globalId}`} className="pointer-events-auto">
                 <button
                   disabled={isLocked}
                   className={`w-16 h-16 rounded-full flex items-center justify-center border-2 border-b-6 transition-all font-outfit text-lg font-black select-none ${
@@ -81,7 +104,7 @@ export function QuestPathway() {
               </Link>
 
               {/* Bubble Title */}
-              <span className={`text-[10px] font-black text-center mt-2.5 uppercase tracking-wide px-2 py-0.5 rounded-md ${
+              <span className={`text-[10px] font-black text-center mt-2.5 uppercase tracking-wide px-2 py-0.5 rounded-md max-w-[100px] truncate ${
                 isActive ? "text-brand-purple bg-brand-soft-purple" : isCompleted ? "text-brand-teal bg-cyan-50" : "text-slate-400"
               }`}>
                 {node.title}
