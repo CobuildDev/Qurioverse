@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Lightbulb, Zap } from "lucide-react";
 
 export function PhotoelectricSim({ onComplete }: { onComplete: (success: boolean) => void }) {
@@ -11,13 +11,10 @@ export function PhotoelectricSim({ onComplete }: { onComplete: (success: boolean
   const isEjecting = frequency >= 60;
   const electronCount = isEjecting ? Math.floor(intensity / 20) + 1 : 0;
 
-  // Let parent know if user achieved the discovery outcome
-  // We'll call onComplete true if they successfully eject electrons
-  if (isEjecting) {
-    onComplete(true);
-  } else {
-    onComplete(false);
-  }
+  // Handle completion side-effect safely
+  useEffect(() => {
+    onComplete(isEjecting);
+  }, [isEjecting, onComplete]);
 
   return (
     <div className="space-y-6">
