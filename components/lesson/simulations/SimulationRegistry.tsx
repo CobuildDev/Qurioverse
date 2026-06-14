@@ -6,10 +6,11 @@ import { GenericSim } from "./GenericSim";
 
 interface SimulationRegistryProps {
   type: string;
+  title?: string;
   onComplete: (success: boolean) => void;
 }
 
-export function SimulationRegistry({ type, onComplete }: SimulationRegistryProps) {
+export function SimulationRegistry({ type, title, onComplete }: SimulationRegistryProps) {
   
   // Route to the correct simulation component based on the 'Type' string from markdown
   switch (type.toLowerCase()) {
@@ -21,6 +22,6 @@ export function SimulationRegistry({ type, onComplete }: SimulationRegistryProps
       return <PhotoelectricSim onComplete={onComplete} />;
       
     default:
-      return <GenericSim type={type} onComplete={onComplete} />;
+      return <GenericSim title={title || type} onComplete={onComplete} />;
   }
 }

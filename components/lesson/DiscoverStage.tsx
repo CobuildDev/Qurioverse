@@ -52,7 +52,8 @@ export function DiscoverStage({ data, onNext }: DiscoverStageProps) {
 
         {/* Dynamic Simulation Area */}
         <SimulationRegistry 
-          type={data.simulation.type} 
+          type={data.simulation.type}
+          title={data.title}
           onComplete={(success) => setSimCompleted(success)} 
         />
 

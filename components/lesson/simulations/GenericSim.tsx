@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
 import { Settings, Lock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-export function GenericSim({ onComplete, type }: { onComplete: (success: boolean) => void, type: string }) {
+export function GenericSim({ onComplete, title }: { onComplete: (success: boolean) => void, title: string }) {
   // We remove the 2 second auto-complete so the user can actually read it
   // and click a button to proceed manually.
 
@@ -29,7 +28,7 @@ export function GenericSim({ onComplete, type }: { onComplete: (success: boolean
       </h3>
       
       <p className="text-sm font-medium text-slate-400 max-w-sm mb-8 z-10">
-        The interactive simulation for <span className="text-brand-teal">[{type}]</span> is currently undergoing calibration by Quiro. 
+        The interactive simulation for <span className="text-brand-teal font-bold">{title}</span> is currently undergoing calibration by Quiro. 
       </p>
 
       <Button onClick={() => onComplete(true)} variant="accent" className="z-10 shadow-lg">

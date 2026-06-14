@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "Quiroverse",
   description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
   manifest: "/manifest.json",
+  icons: {
+    apple: "/icon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
