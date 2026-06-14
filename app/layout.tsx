@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://qurioverse.vercel.app"),
   title: "Quiroverse",
   description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Qurioverse",
+  },
   openGraph: {
     title: "Quiroverse",
     description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
