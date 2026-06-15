@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Qurioverse",
   },
   openGraph: {
-    title: "Quiroverse",
+    title: "Qurioverse",
     description: "Embark on an energetic quantum journey into the subatomic realm! Designed for ages 15-17.",
     type: "website",
   },
