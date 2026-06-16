@@ -2,7 +2,7 @@ import { Header } from "@/components/ui/Header";
 import { CurrentLessonCard } from "@/components/dashboard/CurrentLessonCard";
 import { DailyGoalCard } from "@/components/dashboard/DailyGoalCard";
 import { DailyPuzzleCard } from "@/components/dashboard/DailyPuzzleCard";
-import { QuestPathway } from "@/components/dashboard/QuestPathway";
+import { LearningMap } from "@/components/map/LearningMap";
 
 export default function MapScreen() {
   return (
@@ -14,7 +14,7 @@ export default function MapScreen() {
         {/* PRIMARY FOCUS: CURRENT LESSON & PATHWAY */}
         <div className="space-y-6">
           <CurrentLessonCard />
-          <QuestPathway />
+          <LearningMap />
         </div>
 
         {/* SECONDARY ACTIONS: WIDGETS */}
