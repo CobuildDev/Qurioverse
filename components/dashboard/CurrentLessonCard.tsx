@@ -63,7 +63,7 @@ export function CurrentLessonCard() {
       </div>
 
       <Link href={`/lesson/${activeLessonId}`}>
-        <Button variant="primary" size="default" className="w-full h-12">
+        <Button variant="primary" size="default" className="w-full h-12 animate-float">
           Resume Quest
         </Button>
       </Link>

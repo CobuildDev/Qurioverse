@@ -63,7 +63,7 @@ export default function TutorScreen() {
   };
 
   return (
-    <main className="flex-1 flex flex-col bg-[#F8FAFC] min-h-screen pb-24 font-fredoka">
+    <main className="flex-1 flex flex-col bg-[#F8FAFC] min-h-100vh pb-24 font-fredoka">
       <Header />
 
       <div className="px-5 pt-6 flex-1 flex flex-col justify-between overflow-hidden">
