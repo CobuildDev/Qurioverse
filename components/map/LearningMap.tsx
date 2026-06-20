@@ -40,10 +40,10 @@ export function LearningMap() {
       {/* Background Map Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image 
-          src="/images/map_bg.png" 
+          src="/images/map-svg.svg" 
           alt="Learning Map Background" 
           fill 
-          className="object-cover opacity-90"
+          className="object-cover opacity-70"
           priority
         />
       </div>

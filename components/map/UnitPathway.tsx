@@ -18,7 +18,7 @@ export function UnitPathway({ lessons, activeUnit, unitId }: { lessons: any[], a
   return (
     <div className="py-6 relative overflow-hidden w-full max-w-sm mx-auto">
       
-      {/* Vertical Connecting SVG Line */}
+      {/* Vertical Connecting SVG Line
       <div className="absolute top-10 bottom-10 left-0 right-0 pointer-events-none flex justify-center z-0">
         <svg className="w-full h-full" viewBox="0 0 240 800" preserveAspectRatio="none">
           <path 
@@ -31,7 +31,7 @@ export function UnitPathway({ lessons, activeUnit, unitId }: { lessons: any[], a
             vectorEffect="non-scaling-stroke"
           />
         </svg>
-      </div>
+      </div> */}
 
       {/* zig-zag bubbles */}
       <div className="grid grid-cols-3 gap-y-10 relative z-10 px-2">
