@@ -39,7 +39,8 @@ export function Header() {
 
         {/* Avatar Slot */}
         <Link href="/progress" className="w-8 h-8 rounded-full bg-brand-soft-purple border-2 border-brand-purple flex items-center justify-center overflow-hidden transition-all active:scale-90 shadow-sm">
-          <User className="w-4 h-4 text-brand-purple" />
+          {/* <User className="w-4 h-4 text-brand-purple" /> */}
+          🧑‍🦰
         </Link>
 
       </div>
